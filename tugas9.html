@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Reski Maulana</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Efek hujan */
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .drop {
+      position: absolute;
+      width: 2px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 1px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    header {
+      background-color: #0077b6;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile,
+    .section {
+      background-color: rgba(255, 255, 255, 0.92);
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .section h3 {
+      color: #0077b6;
+      margin-bottom: 15px;
+    }
+
+    .section ul {
+      list-style-type: square;
+      padding-left: 20px;
+      line-height: 1.8;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .section ul li a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .section ul li a:hover {
+      color: #0077b6;
+      text-decoration: underline;
+    }
+
+    .app-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .app-card {
+      background: #f0f8ff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .app-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .app-card p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back-link {
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Efek Hujan -->
+  <div class="rain" id="rain"></div>
+  <script>
+    const rainContainer = document.getElementById("rain");
+    const jumlahTetes = 200;
+    for (let i = 0; i < jumlahTetes; i++) {
+      const drop = document.createElement("div");
+      drop.className = "drop";
+      drop.style.left = `${Math.random() * 100}%`;
+      drop.style.animationDuration = `${0.4 + Math.random() * 1.2}s`;
+      drop.style.animationDelay = `${Math.random() * 3}s`;
+      drop.style.height = `${15 + Math.random() * 30}px`;
+      rainContainer.appendChild(drop);
+    }
+  </script>
+
+  <header>
+    Profil Reski Maulana
+  </header>
+
+  <div class="container">
+
+    <div class="profile">
+      <img src="file:///F:/cihuy/17.jpg" alt="Foto Profil">
+      <h2>Reski Maulana</h2>
+      <p>🛠️ Siswa SMK</p>
+
+      <p>
+        <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" style="vertical-align: middle; width: 20px; height: 20px; margin-right: 6px;">
+        <a href="https://wa.me/6283893036216" target="_blank" style="color: black; text-decoration: none;">0838-9303-6216</a>
+      </p>
+      <p>
+        <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" style="vertical-align: middle; width: 20px; height: 20px; margin-right: 6px;">
+        <a href="https://www.instagram.com/an.ang5772" target="_blank" style="color: black; text-decoration: none;">@an.ang5772</a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Aplikasi Favorit</h3>
+      <div class="app-container">
+        <div class="app-card"><img src="file:///F:/cihuy/16.PNG" alt="Delta Force"><p>Delta Force</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/19.jpeg" alt="Honkai Impact"><p>HOK (Honkai Impact)</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/21.png" alt="PUBG Mobile"><p>PUBG</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/22.jpg" alt="Mobile Legends"><p>ML (Mobile Legends)</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/18.png" alt="COD Mobile"><p>CODM</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/23.jpg" alt="Tik Tok"><p>Tik Tok</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/24.png" alt="WhatsApp"><p>WhatsApp</p></div>
+        <div class="app-card"><img src="file:///F:/cihuy/20.png" alt="Minecraft"><p>Minecraft</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Hobi</h3>
+      <ul>
+        <li>Dengerin musik, terutama James Arthur</li>
+        <li>Menggambar karakter anime</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3><a href="karya.html" class="back-link">🎨 Lihat Hasil Karya</a></h3>
+      <p>Klik untuk melihat hasil gambar karyaku.</p>
+    </div>
+
+    <div class="section">
+      <h3>🎶 Lagu Favorit</h3>
+      <ul>
+        <li><a href="https://www.youtube.com/results?search_query=Chandelier" target="_blank">Chandelier</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=WILDFLOWER" target="_blank">WILDFLOWER</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=BIRDS+OF+A+FEATHER" target="_blank">BIRDS OF A FEATHER</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=BUNNY+GIRL" target="_blank">BUNNY GIRL</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Rumah+ke+Rumah" target="_blank">Rumah ke Rumah</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Evaluasi" target="_blank">Evaluasi</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Kala+Itu" target="_blank">Kala Itu</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Introver" target="_blank">Introver</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Habits" target="_blank">Habits</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Best+Friend" target="_blank">Best Friend</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Can+I+Be+Him" target="_blank">Can I Be Him</a></li>
+        <li><a href="https://www.youtube.com/results?search_query=Kau+Rumahku" target="_blank">Kau Rumahku</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 - Dibuat untuk tugas sekolah
+  </footer>
+
+</body>
+</html>
